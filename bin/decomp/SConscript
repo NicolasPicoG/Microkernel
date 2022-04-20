@@ -1,0 +1,6 @@
+
+Import('build_env')
+
+env = build_env.Clone()
+env.UseLibraries([ 'libapp', 'libarch', 'libstd', 'libipc', 'libexec', 'rt' ], 'host')
+env.HostProgram('decomp', Glob('*.cpp'))
